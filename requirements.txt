@@ -8,3 +8,5 @@ pandas
 matplotlib
 scipy
 gunicorn==20.1.0
+statistics
+sklear
