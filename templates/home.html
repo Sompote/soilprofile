@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Soil Profile</title>
+</head>
+<script>
+	function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(200)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+<body>
+
+<div>
+
+	<h1><b><p align="center">Soil Profile V. 0.1a</p></b></h1>
+	<center><img src="{{url_for('static', filename='geotechlogo.jpg')}}" align="middle" /> </center>
+	<h2><p align="center">Sample Excel file</p></h2>
+	<p align="center">-<a  download href="https://docs.google.com/spreadsheets/d/1nqyyY0bQrPlLhDWI7unYIG061zW3RJS5/edit?usp=sharing&ouid=114810857825206778967&rtpof=true&sd=true">Download </a> </p>
+
+	<hr>
+
+
+</div>
+
+
+<header class="navbar">
+    <form action="/upload" method="POST" enctype="multipart/form-data" >
+        <div align="center">
+            <label class="btn btn-default btn-file">
+			<div align="center">
+               <input type="file" class="custom-file-input" name="image" id="image" onchange="readURL(this);" />
+			</div>
+			<br>
+			<img src="" id="blah" >
+            </label>
+		</div>
+
+		<hr>
+
+		<div align="center">
+            <input type="submit" value="Upload your file" class="btn btn-primary">
+        </div>
+    </form>
+</header>
+
+<div class="text-center">
+	<div class="alert alert-success" style="margin-top:20px;">
+
+<hr>
+<center><img src="{{ image_to_show }}"></center>
+<center><img src="{{ image_to_show2 }}"></center>
+
+	</div>
+</div>
+<small><p align="center">Develop by Dr. Sompote Y. August 2021</p></small>
+<small><p align="center">Department of Civil Engineering, KMUTT</p></small>
+<center><small><a href="https://www.facebook.com/CivilEng.Online">FACEBOOK</a></small></center>
+
+
+
+</body>
+</html>

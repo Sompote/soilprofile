@@ -1,0 +1,10 @@
+flask
+opencv-contrib-python-headless
+pybase64
+numpy
+Pillow
+seaborn
+pandas
+matplotlib
+scipy
+gunicorn==20.1.0
